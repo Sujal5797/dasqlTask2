@@ -68,3 +68,43 @@ values ('name4','pg','08-28-2024','08-30-2025',2,2,'mba');
 insert into courses(instructor_name,course_level,start_date,end_date,which_year,sem,departments)
 values ('name1','ug','08-28-2024','08-30-2025',2,3,'bsc');
 
+create table activities(
+id int primary key,
+student_name varchar,
+which_year int,
+participated_in varchar,
+gender varchar,
+FOREIGN KEY (id) REFERENCES departments(id)
+); 
+
+insert into activities(id,student_name,which_year,participated_in,gender)
+values(1,'name1',1,'activity1','male');
+
+insert into activities(id,student_name,which_year,participated_in,gender)
+values(2,'name2',2,'activity3','female');
+
+insert into activities(id,student_name,which_year,participated_in,gender)
+values(3,'name3',3,'activity6','male');
+
+insert into activities(id,student_name,which_year,participated_in,gender)
+values(4,'name4',2,'activity4','female');
+
+select * from activities
+
+create table farewell(
+id int primary key,
+student_name varchar,
+entry_fee varchar,
+gender varchar,
+FOREIGN KEY (id)REFERENCES activities(id)
+),
+
+insert into farewell(id,student_name,entry_fee,gender)
+values
+(1,'name1','cash','male'),
+(2,'name2','cash','female'),
+(3,'name3','online','male'),
+(4,'name4','online','female')
+
+
+
